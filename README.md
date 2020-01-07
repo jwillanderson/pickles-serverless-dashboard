@@ -5,6 +5,7 @@ Things I would like to address
 - Styling standardization
 - Nice Documentation
 - Better deployment and setup script
+- Better Example Dashboard and adding more base widgets.
 
 Things for the Dreamboat
 - Auto install Jobs and Widget framework 
