@@ -51,7 +51,7 @@ package:
 functions:
   pickles-api:
     handler: api/handler.handle
-    role: !GetAtt [JenkinsJobStatusRole, 'Arn']
+    role: !GetAtt [PicklesApiFunctionRole, 'Arn']
     memorySize: 128
     reservedConcurrency: 10
     events:

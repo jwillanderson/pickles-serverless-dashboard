@@ -15,7 +15,7 @@ PICKLES_JOB_NAME = "example-pickles-job"
 def do_something(event, context):
     body = {
         "foo": "bar",
-        "date": datetime.now()
+        "date": datetime.now().__str__()
     }
 
     pickles.store_data(PICKLES_JOB_NAME, body)
