@@ -1,0 +1,18 @@
+Resources:
+  BasePicklesJobPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AllowAccessToPickleS3Bucket
+            Effect: Allow
+            Action:
+              - s3:*
+            Resource:
+              - Fn::GetAtt: [ PicklesResultBucket, "Arn" ]
+              - Fn::Join: ["", [ Fn::GetAtt: [ PicklesResultBucket, "Arn" ], "/*"]]
+  PicklesResultBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+     BucketName: ${self:custom.pickles.bucketName}

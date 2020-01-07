@@ -1,0 +1,18 @@
+<gridster-item [item]="getItemConfiguration()">
+  <mat-card class="jenkins-job-status not-loaded" align="center" *ngIf="!failedJobs">
+    <mat-card-title class="mat-headline">Jenkins Status</mat-card-title>
+    <mat-card-content>
+      <h1 class="mat-h1">Data Not Loaded</h1>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="jenkins-job-status" *ngIf="failedJobs" [ngClass]="failedJobs.length > 0 ? 'failed' : 'success'"
+            align="center">
+    <mat-card-title class="mat-headline">Jenkins Status</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item class="mat-body-strong" *ngFor="let failedJob of failedJobs">{{ failedJob }}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-footer><p>Last Updated: {{ this.lastUpdated | date : "shortTime"}}</p></mat-card-footer>
+  </mat-card>
+</gridster-item>

@@ -1,0 +1,9 @@
+<gridster-item [item]="getItemConfiguration()">
+  <mat-card class="clock-mat-card" align="center">
+    <mat-card-content style="margin-top: 25%">
+      <h1 class="mat-h1 mat-display-1">{{ title }}</h1>
+      <h2 class="mat-display-3">{{ whatTime | async | date : getTimeFormat() : getTimeZone() }}</h2>
+      <h4 class="mat-subheading-1">{{ whatTime | async | date : getDateFormat() : getTimeZone() }}</h4>
+    </mat-card-content>
+  </mat-card>
+</gridster-item>

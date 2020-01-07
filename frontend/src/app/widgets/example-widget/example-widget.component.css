@@ -1,0 +1,22 @@
+.jenkins-job-status {
+  height: 100%;
+  border-radius: 0;
+  color: whitesmoke;
+}
+
+.not-loaded {
+  background: darkgray;
+}
+
+.failed {
+  background: red;
+}
+
+.success {
+  background: green;
+}
+
+.mat-list-item {
+  color: whitesmoke;
+}
+
