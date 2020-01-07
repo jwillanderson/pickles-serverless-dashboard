@@ -1,4 +1,14 @@
 # Pickles - A Serverless Dashboard Framework
+
+NOTE: Still a work in progress
+Things I would like to address
+- Styling standardization
+- Nice Documentation
+- Better deployment and setup script
+
+Things for the Dreamboat
+- Auto install Jobs and Widget framework 
+
 ## Introduction
 This framework was built to provide a Serverless Solution to running a Dashboard in AWS.
 Using the [Serverless Framework](https://www.serverless.com) and built using AWS Resources it 
