@@ -3,21 +3,11 @@ import { CompactType, GridsterConfig, GridType } from "angular-gridster2";
 
 @Component({
   selector: 'app-index-dashboard',
-  templateUrl: './index.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './index.component.html'
 })
 export class IndexComponent implements OnInit {
 
   options: GridsterConfig;
-
-  static itemChange(item, itemComponent) {
-    console.info('itemChanged', item, itemComponent);
-  }
-
-  static itemResize(item, itemComponent) {
-    console.info('itemResized', item, itemComponent);
-  }
 
   ngOnInit() {
     this.options = {

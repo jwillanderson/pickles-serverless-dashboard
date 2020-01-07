@@ -1,22 +1,10 @@
-.jenkins-job-status {
+.example-widget {
   height: 100%;
   border-radius: 0;
   color: whitesmoke;
+  background: green;
 }
 
 .not-loaded {
   background: darkgray;
 }
-
-.failed {
-  background: red;
-}
-
-.success {
-  background: green;
-}
-
-.mat-list-item {
-  color: whitesmoke;
-}
-

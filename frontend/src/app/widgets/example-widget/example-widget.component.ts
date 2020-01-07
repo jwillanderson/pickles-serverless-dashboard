@@ -1,6 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { PickleDataBaseWidgetComponent } from "../../common/pickle-data-base-widget.component";
-import { PicklesService } from "../../services/pickles.service";
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { PickleDataBaseWidgetComponent } from '../../common/pickle-data-base-widget.component';
+import { PicklesService } from '../../services/pickles.service';
 
 @Component({
   selector: 'app-example-pickle-widget',
@@ -9,17 +9,24 @@ import { PicklesService } from "../../services/pickles.service";
 })
 export class ExampleWidgetComponent extends PickleDataBaseWidgetComponent {
 
+  @Input()
+  title = 'Example Pickle Data Widget';
+
   data: any;
 
-  constructor(@Inject(PicklesService) _picklesService: PicklesService) {
-    super(_picklesService);
+  constructor(@Inject(PicklesService) picklesService: PicklesService) {
+    super(picklesService);
   }
 
   getJobName() {
-    return "example-pickles-job"
+    return 'example-pickles-job';
   }
 
   setData(data: any) {
     this.data = data;
+  }
+
+  stringifyData() {
+    return JSON.stringify(this.data);
   }
 }
