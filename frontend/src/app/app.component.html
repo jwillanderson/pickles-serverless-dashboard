@@ -1,1 +1,15 @@
+<div *ngIf="amIHome()">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <h1 class="mat-h1">Pickle Dashboards</h1>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-action-list>
+    <a *ngFor="let dashboard of getDashboards()" routerLink="{{ dashboard.path }}" routerLinkActive="active">
+      <mat-list-item>
+        {{ dashboard.name }}
+      </mat-list-item>
+    </a>
+  </mat-action-list>
+</div>
 <router-outlet></router-outlet>

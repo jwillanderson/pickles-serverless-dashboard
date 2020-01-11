@@ -7,3 +7,7 @@
 .clock-content {
   justify-content: center
 }
+
+.clock-date {
+  font-size: 32pt;
+}

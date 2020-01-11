@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { PickleBaseWidgetComponent } from "../../common/pickle-base-widget.component";
-import { Observable } from "rxjs";
-import { interval } from "rxjs";
-import { map, share } from "rxjs/operators";
+import { PickleBaseWidgetComponent } from '../../common/pickle-base-widget.component';
+import { Observable } from 'rxjs';
+import { interval } from 'rxjs';
+import { map, share } from 'rxjs/operators';
 
 @Component({
   selector: 'app-clock',
@@ -15,18 +15,18 @@ export class ClockComponent extends PickleBaseWidgetComponent {
   private title: string;
 
   @Input()
-  private timezone: string = 'Z';
+  private timezone = 'Z';
 
   @Input()
-  private dateFormat: string = 'd/M/yy';
+  private dateFormat = 'd/M/yy';
 
   @Input()
-  private timeFormat: string = 'hh:mm:ss aa';
+  private timeFormat = 'hh:mm:ss aa';
 
   private whatTime: Observable<number>;
 
   getJobName() {
-    return "clock-widget"
+    return 'clock-widget';
   }
 
   constructor() {
@@ -34,7 +34,7 @@ export class ClockComponent extends PickleBaseWidgetComponent {
     this.whatTime = interval(1000).pipe(
       map(x => Date.now()),
       share()
-    )
+    );
   }
 
   getTimeZone() {
