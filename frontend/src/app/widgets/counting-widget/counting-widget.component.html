@@ -1,0 +1,8 @@
+<gridster-item [item]="getItemConfiguration()">
+  <mat-card class="counting-widget" align="center" *ngIf="currentValue">
+    <mat-card-title class="counter-mat-card-title">{{ title }}</mat-card-title>
+    <mat-card-content class="counter-content">
+      <h1 class="mat-h1">{{ currentValue }}</h1>
+    </mat-card-content>
+  </mat-card>
+</gridster-item>

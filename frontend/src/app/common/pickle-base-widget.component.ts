@@ -1,5 +1,5 @@
-import { Input} from "@angular/core";
-import { GridsterItem } from "angular-gridster2";
+import { Input } from '@angular/core';
+import { GridsterItem } from 'angular-gridster2';
 
 export abstract class PickleBaseWidgetComponent {
 
@@ -30,8 +30,6 @@ export abstract class PickleBaseWidgetComponent {
       cols: this.width,
       compactEnabled: true,
       rows: this.height,
-    }
+    };
   }
-
-  abstract getJobName();
 }

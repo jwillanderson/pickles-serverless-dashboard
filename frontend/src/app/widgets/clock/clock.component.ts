@@ -25,10 +25,6 @@ export class ClockComponent extends PickleBaseWidgetComponent {
 
   private whatTime: Observable<number>;
 
-  getJobName() {
-    return 'clock-widget';
-  }
-
   constructor() {
     super();
     this.whatTime = interval(1000).pipe(

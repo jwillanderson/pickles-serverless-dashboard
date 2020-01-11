@@ -1,0 +1,16 @@
+.counting-widget {
+  background-color: deepskyblue;
+  color: whitesmoke;
+  height: 100%;
+  padding-top: 40%;
+  border-radius: 0;
+}
+
+.counter-mat-card-title {
+  margin-bottom: 25px;
+}
+
+.counter-content > h1 {
+  font-size: 56pt;
+  font-weight: 600;
+}

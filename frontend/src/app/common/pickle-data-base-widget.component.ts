@@ -1,31 +1,28 @@
-import { OnDestroy, OnInit } from "@angular/core";
-import { PickleBaseWidgetComponent } from "./pickle-base-widget.component";
-import { HttpClient } from "@angular/common/http";
-import { environment } from "../../environments/environment";
-import { PicklesService } from "../services/pickles.service";
-
-class PicklesResponse {
-  data: any;
-}
+import { OnDestroy, OnInit } from '@angular/core';
+import { PickleBaseWidgetComponent } from './pickle-base-widget.component';
+import { PicklesService } from '../services/pickles.service';
+import { log } from 'util';
 
 export abstract class PickleDataBaseWidgetComponent extends PickleBaseWidgetComponent implements OnInit, OnDestroy {
   private dataInterval: any;
 
-  protected constructor(protected _picklesService: PicklesService) {
+  protected constructor(protected picklesService: PicklesService) {
     super();
   }
 
   ngOnInit(): void {
-    this._picklesService.getDataEmitter().subscribe((data) => {
-      console.info(`Getting Data for Job: ${this.getJobName()}`);
+    this.picklesService.getDataEmitter().subscribe((data) => {
+      log(`Getting Data for Job: ${this.getJobName()}`);
       this.setData(data[this.getJobName()]);
       this.lastUpdated = new Date();
-    })
+    });
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.dataInterval)
+    clearInterval(this.dataInterval);
   }
+
+  abstract getJobName();
 
   abstract setData(data: any);
 

@@ -4,6 +4,10 @@
   color: #f5f5f5;
 }
 
+.clock-mat-card > mat-card-content {
+  margin-top: 25%;
+}
+
 .clock-content {
   justify-content: center
 }
