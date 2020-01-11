@@ -13,8 +13,7 @@ const routes: DashboardRoute[] = [
     path: 'index',
     component: IndexComponent,
     name: 'Main Dashboard'
-  },
-  { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+  }
 ];
 
 @NgModule({
