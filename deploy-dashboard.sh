@@ -8,5 +8,8 @@ fi
 echo "------------------------ Building the Frontend ------------------------"
 ( cd frontend || exit ; ng build )
 
+echo "------------------------ Removing Old Frontend ------------------------"
+aws s3 rm s3://"$BUCKET_NAME/dashboard" --recursive
+
 echo "------------------------ Deploying the Frontend ------------------------"
 aws s3 cp "frontend/dist" s3://"$BUCKET_NAME" --recursive
